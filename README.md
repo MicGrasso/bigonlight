@@ -7,13 +7,28 @@ The BiGONLight is a Mathematica package which encode the *Bi-local Geodesic Oper
 Another useful feature is the Mathematica’s precision control options, which allows the user to set the precision (and accuracy) of numerical result through the commands WorkingPrecision, SetPrecision and SetAccuracy.  
 
 The main achievement of our package is to simulate light propagation in numerical relativity to extract observables. The recipe to obtain the observables using the functions defined in the BiGONLight package can be summarized as follows:
-    1. first, one need to specify the S and O kinematics and the metric, which can be given already through its 3 + 1 components (&alpha;, &beta;<sup>i</sup>,  &gamma;<sub>ij</sub>, K<sub>ij</sub>) or as a 4D metric tensor and use ADM[] to do the splitting.
+
+    1. first, one need to specify the S and O kinematics and the metric, which can be given already through its 3 + 1 components (&alpha;, &beta;<sup>i</sup>,  &gamma;<sub>ij</sub>, K<sub>ij</sub>) or as a 4D metric tensor and use ADM[] to do the splitting. 
+
+
     2. set up the null geodesic giving the initial tangent vector or using InitialConditions[]
-    3. find the geodesic equations in 3+1 using GeodesicEquations[] and EnergyEquations[] and then solve them with SolveGeodesic[] and SolveEnergy[]
-    4. set up the initial conditions for the frame that will be parallel transported along the line of sight (SNF). The parallel transport of the frame is obtained using the function PTransportedFrame[]
-    5. use the OpticalTidalMatrix[] to compute the optical tidal matrix R<sup>&mu;</sup><sub>&sigma;&rho;&nu;</sub>l<sup>&sigma;</sup>l<sup>&rho;</sup> projected into the parallel transported frame. OpticalTidalMatrix[] take the 3+1 components of the metric to compute the Riemann tensor in terms of its 3+1 components (i.e. the Gauss relation, the Codazzi relation and the Ricci relation) and then does the contraction with the 3+1 tangent vector and the projection into the parallel transported frame (in terms of its 3+1 components).
-    6. compose the geodesic deviation equation for the BGO with BGOequations[] and solve them using SolveBGO[]
-    7. use the expression for the observables in terms of the BGO to compute optical observables
+
+
+    3. find the geodesic equations in 3+1 using GeodesicEquations[] and EnergyEquations[] and then solve them with SolveGeodesic[] and SolveEnergy[]. 
+
+
+    4. set up the initial conditions for the frame that will be parallel transported along the line of sight (SNF). The parallel transport of the frame is obtained using the function PTransportedFrame[]. 
+
+
+    5. use the OpticalTidalMatrix[] to compute the optical tidal matrix R<sup>&mu;</sup><sub>&sigma;&rho;&nu;</sub>l<sup>&sigma;</sup>l<sup>&rho;</sup> projected into the parallel transported frame. OpticalTidalMatrix[] take the 3+1 components of the metric to compute the Riemann tensor in terms of its 3+1 components (i.e. the Gauss relation, the Codazzi relation and the Ricci relation) and then does the contraction with the 3+1 tangent vector and the projection into the parallel transported frame (in terms of its 3+1 components).  
+
+
+    6. compose the geodesic deviation equation for the BGO with BGOequations[] and solve them using SolveBGO[]. 
+
+
+    7. use the expression for the observables in terms of the BGO to compute optical observables. 
+
+
 
 
 ### Additional information:
