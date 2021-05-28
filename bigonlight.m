@@ -58,6 +58,7 @@ TransformedMetric::usage="TransformedMetric[\!\(\*SubscriptBox[\(g\), \(\[Mu]\[N
 TransformedMetric::dimension="Trubles with matrix and coordinates dimensions.";
 ADM::usage = "ADM[g\[Mu]\[Nu],\!\(\*SuperscriptBox[\(X\), \(\[Mu]\)]\)]. Returns the 3-metric \!\(\*SubscriptBox[\(\[Gamma]\), \(ij\)]\), the lapse \[Alpha] and the shift \!\(\*SuperscriptBox[\(\[Beta]\), \(i\)]\) given the full covariant metric g\[Mu]\[Nu]."
 SNFtoADM::usage="SNFtoADM[\!\(\*SuperscriptBox[\(\[ScriptCapitalV]\), \(\[Mu]\)]\),\!\(\*SuperscriptBox[SubscriptBox[\(e\), \(i\)], \((a)\)]\),\!\(\*SuperscriptBox[SubscriptBox[\(e\), \(0\)], \((a)\)]\),\!\(\*SuperscriptBox[\(n\), \(\[Mu]\)]\),\!\(\*SubscriptBox[\(n\), \(\[Mu]\)]\)]. Returns the 3+1 form of a vector \[ScriptCapitalV] given the coframe\!\(\*SuperscriptBox[\(\\\ \), \((4)\)]\)\!\(\*SubscriptBox[SuperscriptBox[\(e\), \(\[Mu]\)], \(A\)]\) and\!\(\*SuperscriptBox[\(\\\ \), \((4)\)]\)\!\(\*SuperscriptBox[\(\[ScriptCapitalV]\), \(A\)]\) the 4D vector in the frame "
+Vsplit::usage="Vsplit[\!\(\*SuperscriptBox[\(\[ScriptCapitalV]\), \(\[Mu]\)]\),\!\(\*SuperscriptBox[\(n\), \(\[Mu]\)]\),\!\(\*SubscriptBox[\(n\), \(\[Mu]\)]\)]. Returns the 3+1 form of a four-vector as \[ScriptCapitalV]=vecN( \!\(\*SuperscriptBox[\(n\), \(\[Mu]\)]\) + \!\(\*SuperscriptBox[\(vecT\), \(\[Mu]\)]\)) given the normal vector \!\(\*SuperscriptBox[\(n\), \(\[Mu]\)]\) and \!\(\*SubscriptBox[\(n\), \(\[Mu]\)]\)]"
 Christoffel::usage="Christoffel[\!\(\*SubscriptBox[\(g\), \(\[Mu]\[Nu]\)]\), \!\(\*SuperscriptBox[\(X\), \(\[Mu]\)]\)]. Returns the Christoffel simbols \!\(\*SubscriptBox[SuperscriptBox[\(\[CapitalGamma]\), \(\[Sigma]\)], \(\[Mu]\[Nu]\)]\) for the given metric in the given coordinates."
 ConD::usage="Returns the covariant derivative of fully contravariant tensor T with Chrisoffel symbols \[CapitalGamma] in coordinates 'chart'."
 CovD::usage = "Returns the covariant derivative of fully covariant tensor \[Omega] with Chrisoffel symbols \[CapitalGamma] in coordinates 'chart'."
@@ -119,6 +120,13 @@ vect4=Table[(Sum[vectA[[indA]](EE0[[indA]]nu[[ind\[Mu]]]+EE4[[ind\[Mu],indA]]),{
 vectN=Sum[-vect4[[indi]]nd[[indi]],{indi,1,4}];
 vectT=Table[vect4[[ind\[Mu]]]-vectN,{ind\[Mu],1,4}];
 {vectN,Take[vectT,-3],vect4}
+]
+
+
+Vsplit[vector_,normup_,normdown_]:=Module[{vect=vector,nu=normup,nd=normdown,vectN,vectT},
+vectN=Sum[-vect[[indi]]nd[[indi]],{indi,1,4}];
+vectT=Table[vect[[indi]]/vectN-nu[[indi]],{indi,1,4}];
+{vectN,Take[vectT,-3]}
 ]
 
 
