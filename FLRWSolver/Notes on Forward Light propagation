@@ -1,0 +1,5 @@
+Let us remark that for this test we perform light propagation using forward integration, namely from the source S to the observer O. 
+The procedure works well in post-processing but it would reach the full potentiality if used to perform light propagation on-the-fly with the spacetime simulation. 
+On one side, the current structure of BiGONLight is not able to perform on-the-fly forward simulation, on the other side this structure has the advantage of being compatible 
+with many codes for the spacetime dynamics.
+For more references on forward and backward light propagation see Grasso et al. ArXiv:2105.04552 [astro-ph.CO] and Grasso, Villa (2021).
