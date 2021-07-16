@@ -33,7 +33,7 @@ The main achievement of our package is to simulate light propagation in numerica
 
 ### Additional information:
 More information about the BGO framework can be found in Phys.Rev.D 99,064038 (2019) (arXiv:1811.10284) or Phys.Rev.D 101,063506 (2020) (arXiv:1912.04988). 
-More information about the package can be found in Grasso, Villa (2021) and in Grasso, Villa, Korzynski, Matarrese (2021) (arXiv:2105.04552).
+More information about the package can be found in Grasso, Villa (2021) (arXiv:2107.06306) and in Grasso, Villa, Korzynski, Matarrese (2021) (arXiv:2105.04552).
 
 ## License: 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the ollowing conditions:
